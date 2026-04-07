@@ -20,6 +20,7 @@ import { PlacesListComponent } from '../../../shared/components/places-list/plac
   selector: 'app-places',
   templateUrl: './places.component.html',
   styleUrl: './places.component.scss',
+  host: { class: 'view-component flex-column fade-in' },
   providers: [PlacesService],
   imports: [
     CommonModule,

@@ -18,6 +18,10 @@
   width: 100%;
 }
 
+app-places-list {
+  flex: 1 1 auto;
+}
+
 .no-data-message {
   display: flex;
   justify-content: center;

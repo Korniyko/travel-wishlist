@@ -2,7 +2,7 @@
 <div class="toolbar k-toolbar">
   <div class="toolbar-item">
     <kendo-label for="search" text="Search for a place" />
-    <kendo-textbox id="search" class="stretch" placeholder="Coffe" [(value)]="place" />
+    <kendo-textbox id="search" class="stretch" [(value)]="place" />
   </div>
   <div class="toolbar-item">
     <kendo-label for="city" text="City" />
@@ -12,7 +12,13 @@
     <kendo-label for="count" text="Count" />
     <kendo-numerictextbox id="count" [format]="'n0'" class="stretch" [(value)]="count" />
   </div>
-  <core-button [label]="'Search'" [color]="'primary'" [icon]="searchIcon" (click)="onSearch()" />
+  <core-button
+    [label]="'Search'"
+    [color]="'primary'"
+    [icon]="searchIcon"
+    [disabled]="place() === '' || city() === ''"
+    (click)="onSearch()"
+  />
 </div>
 
 <!-- Places List -->

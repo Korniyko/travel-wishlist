@@ -1,0 +1,8 @@
+@if (favoritesService.favorites().length === 0) {
+  <div class="no-data-message">
+    <core-icon [icon]="infoSolidIcon" />
+    <span>No favorites found.</span>
+  </div>
+} @else {
+  <app-places-list [mode]="'favorites'" [places]="favoritesService.favorites()" />
+}

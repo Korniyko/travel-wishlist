@@ -6,6 +6,7 @@ import {
   CORE_NOTIFICATION_DEFAULT_SETTINGS,
   CoreNotificationService,
 } from './shared/components/popups/core-notification';
+import { CoreDialogConfirmService } from './shared/components/popups/core-dialog-confirm';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -22,5 +23,6 @@ export const appConfig: ApplicationConfig = {
       },
     },
     CoreNotificationService,
+    CoreDialogConfirmService,
   ],
 };

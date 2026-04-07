@@ -26,7 +26,7 @@ export class PlacesService {
 
   private mapFoursquareToPlaces(results: any[]): Place[] {
     return results.map((item) => ({
-      id: item.fsq_id ?? '',
+      id: item.fsq_id ?? `${item.name}-${item.location?.formatted_address ?? ''}`,
       name: item.name ?? 'Unknown',
       category: item.categories && item.categories.length > 0 ? item.categories[0].name : 'Unknown',
       address: item.location?.formatted_address ?? item.location?.address ?? 'No address',

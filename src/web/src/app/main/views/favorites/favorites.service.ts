@@ -35,7 +35,7 @@ export class FavoritesService {
   public addFavorite(place: Place): void {
     const current = this.favorites();
     // Check if the place is already in favorites to avoid duplicates
-    if (!current.find((p: Place) => p.id === place.id)) {
+    if (!current.find((item: Place) => item.id === place.id)) {
       const updated = [...current, place];
       this.favorites.set(updated);
       this.saveToLocalStorage(updated);
@@ -44,8 +44,12 @@ export class FavoritesService {
 
   public removeFavorite(place: Place): void {
     const current = this.favorites();
-    const updated = current.filter((p: Place) => p.id !== place.id);
+    const updated = current.filter((item: Place) => item.id !== place.id);
     this.favorites.set(updated);
     this.saveToLocalStorage(updated);
+  }
+
+  public isFavorite(place: Place): boolean {
+    return this.favorites().some((item: Place) => item.id === place.id);
   }
 }

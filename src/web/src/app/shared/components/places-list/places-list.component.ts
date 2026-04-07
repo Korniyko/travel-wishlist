@@ -7,7 +7,7 @@ import { CoreButtonModule } from '../core-button';
 import { CoreNotificationService } from '../popups/core-notification';
 import { CoreDialogConfirmService } from '../popups/core-dialog-confirm';
 // Icons
-import { starOutlineIcon, trashIcon } from '@progress/kendo-svg-icons';
+import { heartIcon, heartOutlineIcon, trashIcon } from '@progress/kendo-svg-icons';
 // Services
 import { FavoritesService } from '../../../main/views/favorites/favorites.service';
 
@@ -21,7 +21,8 @@ export class PlacesListComponent {
   public places = input.required<Place[]>();
   public mode = input.required<'places' | 'favorites'>();
   /// Icons
-  public starOutlineIcon = starOutlineIcon;
+  public heartIcon = heartIcon;
+  public heartOutlineIcon = heartOutlineIcon;
   public trashIcon = trashIcon;
   // Dependencies
   private _notify = inject(CoreNotificationService);
@@ -32,12 +33,24 @@ export class PlacesListComponent {
 
   public onSave(place: Place): void {
     if (this.mode() === 'places') {
-      this._favoritesService.addFavorite(place);
-      this._notify.success(`${place.name} successfully added to favorites!`);
+      // Toggle favorite status
+      if (this.isFavorite(place)) {
+        this._favoritesService.removeFavorite(place);
+        this._notify.success(`${place.name} removed from favorites!`);
+      } else {
+        this._favoritesService.addFavorite(place);
+        this._notify.success(`${place.name} successfully added to favorites!`);
+      }
     } else {
       this.onRemoveFavorite(place);
     }
   }
+
+  public isFavorite(place: Place): boolean {
+    return this._favoritesService.isFavorite(place);
+  }
+
+  // [ Internal ]
 
   private async onRemoveFavorite(place: Place): Promise<void> {
     // Request user confirmation

@@ -34,7 +34,9 @@
       </div>
       <core-button
         [color]="'primary'"
-        [icon]="mode() === 'places' ? starOutlineIcon : trashIcon"
+        [icon]="
+          mode() === 'places' ? (isFavorite(dataItem) ? heartIcon : heartOutlineIcon) : trashIcon
+        "
         (click)="onSave(dataItem)"
       />
     </div>

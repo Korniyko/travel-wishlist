@@ -1,7 +1,9 @@
+// Angular
 import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
 import { provideAnimations } from '@angular/platform-browser/animations';
+// Core UI
 import {
   CORE_NOTIFICATION_DEFAULT_SETTINGS,
   CoreNotificationService,

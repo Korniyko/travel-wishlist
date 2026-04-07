@@ -16,7 +16,7 @@
     [label]="'Search'"
     [color]="'primary'"
     [icon]="searchIcon"
-    [disabled]="place() === '' || city() === ''"
+    [disabled]="place() === '' || city() === '' || !count()"
     (click)="onSearch()"
   />
 </div>

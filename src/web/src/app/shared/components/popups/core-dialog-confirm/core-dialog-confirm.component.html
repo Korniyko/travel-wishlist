@@ -1,0 +1,32 @@
+<!-- Message -->
+<p>{{ options()!.message() }}</p>
+<!-- Actions -->
+<kendo-dialog-actions [layout]="'end'">
+  <!-- Cancel Button -->
+  <core-button
+    [label]="options()!.cancelLabel()"
+    [class.offset-left]="!!options()?.secondaryActionLabel()"
+    [disabled]="isBusy() || isSecondaryBusy()"
+    (click)="onCancel()"
+  />
+
+  <!-- Secondary Button -->
+  @if (options()!.secondaryActionLabel()) {
+    <core-button
+      [label]="_secondaryActionLabel()!"
+      [color]="options()!.secondaryActionColor()!"
+      [disabled]="isBusy()"
+      [busy]="isSecondaryBusy()"
+      (click)="onSecondaryAction()"
+    />
+  }
+
+  <!-- Primary Button -->
+  <core-button
+    [label]="_actionLabel()!"
+    [color]="options()!.actionColor()"
+    [disabled]="isSecondaryBusy()"
+    [busy]="isBusy()"
+    (click)="onAction()"
+  />
+</kendo-dialog-actions>

@@ -1,0 +1,126 @@
+// Compatible with @progress/kendo-theme-default v.10.0.0
+
+$tb-on-app-surface: #ffffffff;
+$tb-surface-alt: #121212ff;
+$tb-border: #ffffff05;
+$tb-primary: #1669c9;
+$tb-surface: #2a2a2aff;
+$tb-primary-hover: #2e84e6;
+$tb-base: #323232ff;
+$tb-on-base: #ffffffff;
+$tb-base-hover: #5c5c5cff;
+$tb-base-active: #1e1e1eff;
+$tb-subtle: #ffffffff;
+$tb-base-subtle: #303030ff;
+$tb-base-subtle-hover: #5f5f5fff;
+$tb-base-on-surface: #ffffffff;
+$tb-primary-subtle: #e5f1ffff;
+$tb-border-alt: #ebebeb1c;
+$tb-primary-active: #0268dcff;
+$tb-app-surface: #434343ff;
+$tb-base-emphasis: #333333ff;
+$tb-base-subtle-active: #282828ff;
+$tb-base-on-subtle: #ffffffff;
+$tb-primary-subtle-hover: #d6e9ffff;
+$tb-primary-subtle-active: #bddafbff;
+$tb-primary-emphasis: #3c96fcff;
+$tb-primary-on-subtle: #1e446fff;
+$tb-primary-on-surface: #1571ddff;
+$tb-secondary: #347b5f;
+$tb-secondary-hover: #54a987ff;
+$tb-secondary-active: #254d3dff;
+$tb-secondary-emphasis: #8eb1a3ff;
+$tb-secondary-on-subtle: #3d8569ff;
+
+$tb-kendo-font-family: inherit;
+$tb-kendo-font-size: 14px;
+$tb-kendo-font-weight-normal: 400;
+$tb-kendo-line-height: 1.4285714286;
+$enable-gradients: true;
+
+$tb-typography: (
+  kendo-default-typography: (
+    font-family: 'inherit',
+    font-size: 14px,
+    font-weight: 400,
+    line-height: 1.4285714286,
+  ),
+);
+
+@mixin typography-classes($typography) {
+  @each $selector, $property in $typography {
+    &-#{$selector} {
+      @each $propName, $propValue in $property {
+        #{$propName}: #{$propValue};
+      }
+    }
+
+    &-#{$selector}-important {
+      @each $propName, $propValue in $property {
+        #{$propName}: $propValue !important;
+      }
+    }
+  }
+}
+
+$tb-effects: (
+  tb-internal-none-effects: (
+    box-shadow: (
+      none,
+    ),
+    filter: (
+      none,
+    ),
+    backdrop-filter: (
+      none,
+    ),
+  ),
+);
+
+@mixin effects-classes($effects) {
+  @each $selector, $property in $effects {
+    &-#{$selector} {
+      @each $propName, $propValue in $property {
+        #{$propName}: $propValue;
+      }
+    }
+
+    &-#{$selector}-important {
+      @each $propName, $propValue in $property {
+        #{$propName}: $propValue !important;
+      }
+    }
+  }
+}
+
+%tb-typography {
+  @include typography-classes($tb-typography);
+}
+
+%tb-effects {
+  @include effects-classes($tb-effects);
+}
+
+// Global Variables
+:root {
+  --bg: linear-gradient(#3a3a3a, #171717);
+  --bg-color: #2a2a2a;
+  --panel-bg: linear-gradient(#4f4f4f, #212121);
+  --component-bg: linear-gradient(#474747, #343434);
+  --header-bg: linear-gradient(#6e6e6e, #363636);
+  --tabs-bg: linear-gradient(#3f3f3f, #1e1e1e);
+  --toolbar-bg: linear-gradient(#5b5b5b, #414141);
+  --form-bg: linear-gradient(#686868, #3f3f3f);
+  --input-bg: #171717;
+  --accent-primary: linear-gradient(#1669c9, #005bc3);
+  --accent-primary-color: #1669c9;
+  --primary-hover-color: #2e84e6;
+  --accent-secondary: linear-gradient(#347b5f, #226148);
+  --text: #ffffff;
+  --text-secondary: #bbbbbb;
+  --selected-text: #ffffff;
+  --text-invert: #1d1d1d;
+  --border-color: #b9b9b934;
+  --docs-text: #e9e9e9;
+  --docs-bg: #404040;
+}

@@ -1,0 +1,6 @@
+<!-- Spinner -->
+<span class="k-icon k-i-loading spinner" [ngStyle]="{ 'font-size': size() }"></span>
+<!-- Message (optional) -->
+@if (!!message()) {
+  <div class="message">{{ message() }}</div>
+}

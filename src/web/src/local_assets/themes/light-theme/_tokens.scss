@@ -1,0 +1,110 @@
+// Compatible with @progress/kendo-theme-default v.10.0.0
+
+$tb-primary: #1669c9;
+$tb-primary-hover: #2e84e6;
+$tb-primary-subtle: #e5f1ffff;
+$tb-primary-active: #0268dcff;
+$tb-app-surface: #e7e7e7ff;
+$tb-primary-subtle-hover: #d6e9ffff;
+$tb-primary-subtle-active: #bddafbff;
+$tb-primary-emphasis: #3c96fcff;
+$tb-primary-on-subtle: #1e446fff;
+$tb-primary-on-surface: #1571ddff;
+$tb-secondary: #347b5f;
+$tb-secondary-hover: #54a987ff;
+$tb-secondary-active: #254d3dff;
+$tb-secondary-emphasis: #8eb1a3ff;
+$tb-secondary-on-subtle: #3d8569ff;
+
+$tb-kendo-font-family: inherit;
+$tb-kendo-font-size: 14px;
+$tb-kendo-font-weight-normal: 400;
+$tb-kendo-line-height: 1.4285714286;
+$enable-gradients: true;
+
+$tb-typography: (
+  kendo-default-typography: (
+    font-family: 'inherit',
+    font-size: 14px,
+    font-weight: 400,
+    line-height: 1.4285714286,
+  ),
+);
+
+@mixin typography-classes($typography) {
+  @each $selector, $property in $typography {
+    &-#{$selector} {
+      @each $propName, $propValue in $property {
+        #{$propName}: #{$propValue};
+      }
+    }
+
+    &-#{$selector}-important {
+      @each $propName, $propValue in $property {
+        #{$propName}: $propValue !important;
+      }
+    }
+  }
+}
+
+$tb-effects: (
+  tb-internal-none-effects: (
+    box-shadow: (
+      none,
+    ),
+    filter: (
+      none,
+    ),
+    backdrop-filter: (
+      none,
+    ),
+  ),
+);
+
+@mixin effects-classes($effects) {
+  @each $selector, $property in $effects {
+    &-#{$selector} {
+      @each $propName, $propValue in $property {
+        #{$propName}: $propValue;
+      }
+    }
+
+    &-#{$selector}-important {
+      @each $propName, $propValue in $property {
+        #{$propName}: $propValue !important;
+      }
+    }
+  }
+}
+
+%tb-typography {
+  @include typography-classes($tb-typography);
+}
+
+%tb-effects {
+  @include effects-classes($tb-effects);
+}
+
+// Global Variables
+:root {
+  --bg: linear-gradient(#ffffff, #ededed);
+  --bg-color: #ededed;
+  --panel-bg: linear-gradient(#f6f6f6, #dadada);
+  --component-bg: linear-gradient(#f7f7f7, #ebebeb);
+  --header-bg: linear-gradient(#fbfbfb, #e4e4e4);
+  --tabs-bg: linear-gradient(#f0f0f0, #e9e9e9);
+  --toolbar-bg: linear-gradient(#fdfdfd, #e9e9e9);
+  --form-bg: linear-gradient(#ffffff, #e8e8e8);
+  --input-bg: #ffffff;
+  --accent-primary: linear-gradient(#1669c9, #005bc3);
+  --accent-primary-color: #1669c9;
+  --primary-hover-color: #2e84e6;
+  --accent-secondary: linear-gradient(#347b5f, #226148);
+  --text: #1a1a1a;
+  --text-secondary: #3e3e3e;
+  --selected-text: #ffffff;
+  --text-invert: #ffffff;
+  --border-color: #00000034;
+  --docs-text: #3e3e3e;
+  --docs-bg: #fcfcfc;
+}

@@ -1,0 +1,16 @@
+<!-- Navigation Toggle Button -->
+<core-button
+  title="Toggle Navigation"
+  [type]="'flat'"
+  [icon]="menuIcon"
+  (click)="onToggleNavigationClick()"
+/>
+
+<!-- Title -->
+<span class="title">{{ appTitle() }}</span>
+
+<!-- Spring -->
+<span class="flex-stretch"></span>
+
+<!-- Theme switch -->
+<core-theme-switch title="Switch Theme" [(theme)]="theme" />

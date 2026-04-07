@@ -1,0 +1,145 @@
+// Compatible with @progress/kendo-theme-default v.10.0.0
+
+@use '@progress/kendo-theme-default/scss/index.scss' as *;
+@use 'tokens' as *;
+
+@mixin tb-overrides {
+  .k-grid.k-grid-md .k-table-thead .k-table-row,
+  .k-grid.k-grid-md .k-grid-header .k-table-row {
+    background-color: initial;
+    background-image: linear-gradient(#fbfbfb, #e4e4e4);
+  }
+
+  .k-pager {
+    background-color: initial;
+    background-image: linear-gradient(#fbfbfb, #e4e4e4);
+  }
+
+  .k-toolbar.k-toolbar-solid {
+    background-color: initial;
+  }
+
+  .k-toolbar {
+    background-image: linear-gradient(#fdfdfd, #e9e9e9);
+  }
+
+  .k-colorgradient {
+    background-color: transparent;
+    background-image: none;
+  }
+
+  .k-colorgradient.k-focus,
+  .k-colorgradient.k-state-focus,
+  .k-colorgradient.k-state-focused,
+  .k-colorgradient:focus {
+    background-color: transparent;
+    background-image: none;
+  }
+
+  .k-flatcolorpicker.k-coloreditor {
+    background-color: initial;
+    background-image: linear-gradient(#f7f7f7, #ebebeb);
+  }
+
+  .k-card {
+    background-color: initial;
+    background-image: linear-gradient(#f7f7f7, #ebebeb);
+  }
+
+  .k-expander .k-expander-header {
+    background-color: initial;
+    background-image: linear-gradient(#fbfbfb, #e4e4e4);
+  }
+
+  .k-dialog-wrapper .k-window.k-dialog .k-window-titlebar.k-dialog-titlebar {
+    background-color: initial;
+    background-image: linear-gradient(#fbfbfb, #e4e4e4);
+  }
+
+  .k-dialog-wrapper .k-window.k-dialog .k-window-content.k-dialog-content {
+    background-color: initial;
+    background-image: linear-gradient(#f7f7f7, #ebebeb);
+  }
+
+  .k-dialog-wrapper
+    .k-window.k-dialog
+    .k-window-actions.k-dialog-actions.k-actions.k-actions-stretched {
+    background-color: initial;
+    background-image: linear-gradient(#ffffff, #f1f1f1);
+  }
+
+  .k-dialog-wrapper
+    .k-window.k-dialog
+    .k-window-actions.k-dialog-actions.k-actions.k-actions-start {
+    background-color: initial;
+    background-image: linear-gradient(#ffffff, #f1f1f1);
+  }
+
+  .k-dialog-wrapper
+    .k-window.k-dialog
+    .k-window-actions.k-dialog-actions.k-actions.k-actions-center {
+    background-color: initial;
+    background-image: linear-gradient(#ffffff, #f1f1f1);
+  }
+
+  .k-dialog-wrapper .k-window.k-dialog .k-window-actions.k-dialog-actions.k-actions.k-actions-end {
+    background-color: initial;
+    background-image: linear-gradient(#ffffff, #f1f1f1);
+  }
+
+  .k-window .k-window-titlebar {
+    background-color: initial;
+    background-image: linear-gradient(#fbfbfb, #e4e4e4);
+  }
+
+  .k-window .k-window-content {
+    background-color: initial;
+    background-image: linear-gradient(#f7f7f7, #ebebeb);
+  }
+
+  .k-tabstrip .k-tabstrip-items-wrapper.k-hstack .k-tabstrip-items.k-reset.k-tabstrip-items-start {
+    background-color: initial;
+    background-image: linear-gradient(#f0f0f0, #e9e9e9);
+  }
+
+  .k-tabstrip .k-tabstrip-content.k-active,
+  .k-tabstrip .k-tabstrip-content.k-state-active,
+  .k-tabstrip .k-tabstrip-content:active {
+    background-color: #ededed;
+    background-image: none;
+    padding-block: 0;
+    padding-inline: 0;
+  }
+
+  .k-tabstrip.k-tabstrip-top
+    .k-tabstrip-items-wrapper
+    .k-tabstrip-items.k-reset.k-tabstrip-items-start {
+    background-color: initial;
+    background-image: linear-gradient(#f0f0f0, #e9e9e9);
+  }
+
+  .k-tabstrip.k-tabstrip-bottom
+    .k-tabstrip-items-wrapper
+    .k-tabstrip-items.k-reset.k-tabstrip-items-start {
+    background-color: initial;
+    background-image: linear-gradient(#f0f0f0, #e9e9e9);
+  }
+
+  .k-tabstrip.k-tabstrip-left
+    .k-tabstrip-items-wrapper
+    .k-tabstrip-items.k-reset.k-tabstrip-items-start {
+    background-color: initial;
+    background-image: linear-gradient(#f0f0f0, #e9e9e9);
+  }
+
+  .k-tabstrip.k-tabstrip-right
+    .k-tabstrip-items-wrapper
+    .k-tabstrip-items.k-reset.k-tabstrip-items-start {
+    background-color: initial;
+    background-image: linear-gradient(#f0f0f0, #e9e9e9);
+  }
+}
+
+.k-drawer-wrapper {
+  scrollbar-color: var(--accent-primary-color) !important;
+}

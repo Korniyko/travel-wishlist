@@ -1,0 +1,30 @@
+@use 'tokens' as *;
+@use '@progress/kendo-theme-default/scss/index.scss' as * with (
+  $kendo-colors: (
+    primary: $tb-primary,
+    primary-hover: $tb-primary-hover,
+    primary-subtle: $tb-primary-subtle,
+    primary-active: $tb-primary-active,
+    app-surface: $tb-app-surface,
+    primary-subtle-hover: $tb-primary-subtle-hover,
+    primary-subtle-active: $tb-primary-subtle-active,
+    primary-emphasis: $tb-primary-emphasis,
+    primary-on-subtle: $tb-primary-on-subtle,
+    primary-on-surface: $tb-primary-on-surface,
+    secondary: $tb-secondary,
+    secondary-hover: $tb-secondary-hover,
+    secondary-active: $tb-secondary-active,
+    secondary-emphasis: $tb-secondary-emphasis,
+    secondary-on-subtle: $tb-secondary-on-subtle,
+  ),
+  $kendo-font-family: $tb-kendo-font-family,
+  $kendo-font-size: $tb-kendo-font-size,
+  $kendo-font-weight-normal: $tb-kendo-font-weight-normal,
+  $kendo-line-height: $tb-kendo-line-height
+);
+@use '@progress/kendo-theme-utils/scss/all.scss' as *;
+@use 'overrides' as *;
+
+@include kendo-theme--styles();
+
+@include tb-overrides();

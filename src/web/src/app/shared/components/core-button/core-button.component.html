@@ -1,0 +1,11 @@
+<button
+  kendoButton
+  [fillMode]="_type()"
+  [themeColor]="_color()"
+  [disabled]="disabled() || busy()"
+  [svgIcon]="_svgIcon()!"
+  [attr.aria-label]="ariaLabel()"
+  [tabIndex]="_tabIndex()"
+>
+  {{ label() }}
+</button>

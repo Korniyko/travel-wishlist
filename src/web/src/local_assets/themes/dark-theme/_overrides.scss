@@ -1,0 +1,209 @@
+// Compatible with @progress/kendo-theme-default v.10.0.0
+
+@use '@progress/kendo-theme-default/scss/index.scss' as *;
+@use 'tokens' as *;
+
+@mixin tb-overrides {
+  .k-tabstrip
+    .k-tabstrip-items-wrapper
+    .k-tabstrip-items.k-reset.k-tabstrip-items-start
+    .k-item.k-tabstrip-item {
+    background-color: k-color(base-subtle);
+    background-image: none;
+  }
+
+  .k-tabstrip
+    .k-tabstrip-items-wrapper
+    .k-tabstrip-items.k-reset.k-tabstrip-items-start
+    .k-item.k-tabstrip-item.k-active
+    .k-link,
+  .k-tabstrip
+    .k-tabstrip-items-wrapper
+    .k-tabstrip-items.k-reset.k-tabstrip-items-start
+    .k-item.k-tabstrip-item.k-state-active
+    .k-link,
+  .k-tabstrip
+    .k-tabstrip-items-wrapper
+    .k-tabstrip-items.k-reset.k-tabstrip-items-start
+    .k-item.k-tabstrip-item:active
+    .k-link {
+    background-color: k-color(base-active);
+    background-image: none;
+  }
+
+  .k-tabstrip .k-tabstrip-content.k-active,
+  .k-tabstrip .k-tabstrip-content.k-state-active,
+  .k-tabstrip .k-tabstrip-content:active {
+    background-color: #2a2a2a;
+    background-image: none;
+    padding-block: 0;
+    padding-inline: 0;
+  }
+
+  .k-dialog-wrapper .k-window.k-dialog .k-window-content.k-dialog-content {
+    background-color: initial;
+    background-image: linear-gradient(#474747, #343434);
+  }
+
+  .k-dialog-wrapper
+    .k-window.k-dialog
+    .k-window-actions.k-dialog-actions.k-actions.k-actions-stretched {
+    background-color: initial;
+    background-image: linear-gradient(#3f3f3f, #1e1e1e);
+  }
+
+  .k-card {
+    background-color: initial;
+    background-image: linear-gradient(#474747, #343434);
+  }
+
+  .k-flatcolorpicker.k-coloreditor {
+    background-color: initial;
+    background-image: linear-gradient(#474747, #343434);
+  }
+
+  .k-colorgradient.k-focus,
+  .k-colorgradient.k-state-focus,
+  .k-colorgradient.k-state-focused,
+  .k-colorgradient:focus {
+    background-color: transparent;
+    background-image: none;
+  }
+
+  .k-colorgradient {
+    background-color: transparent;
+    background-image: none;
+  }
+
+  .k-expander.k-expanded .k-expander-content-wrapper .k-expander-content {
+    background-color: initial;
+    background-image: linear-gradient(#474747, #343434);
+  }
+
+  .k-expander .k-expander-header {
+    background-color: initial;
+    background-image: linear-gradient(#3f3f3f, #1e1e1e);
+  }
+
+  .k-tabstrip
+    .k-tabstrip-items-wrapper
+    .k-tabstrip-items.k-reset.k-tabstrip-items-start
+    .k-item.k-tabstrip-item
+    .k-link {
+    background-color: initial;
+    background-image: linear-gradient(#3f3f3f, #1e1e1e);
+  }
+
+  .k-pager {
+    background-color: initial;
+    background-image: linear-gradient(#6e6e6e, #363636);
+  }
+
+  .k-grid.k-grid-md .k-table-thead .k-table-row,
+  .k-grid.k-grid-md .k-grid-header .k-table-row {
+    background-color: initial;
+    background-image: linear-gradient(#6e6e6e, #363636);
+  }
+
+  .k-column-menu.k-grid-columnmenu-popup.k-popup {
+    background-color: initial;
+    background-image: linear-gradient(#5f5f5f, #2b2b2b);
+  }
+
+  .k-scheduler .k-toolbar.k-scheduler-toolbar {
+    background-color: initial;
+    background-image: linear-gradient(#5b5b5b, #414141);
+  }
+
+  .k-scheduler {
+    background-color: initial;
+    background-image: linear-gradient(#474747, #343434);
+  }
+
+  .k-panelbar .k-panelbar-item.k-panelbar-header.k-level-0 {
+    background-color: initial;
+    background-image: linear-gradient(#3f3f3f, #1e1e1e);
+  }
+
+  .k-panelbar .k-panelbar-item.k-panelbar-header.k-level-0 .k-link {
+    background-color: #2a2a2a;
+    background-image: none;
+  }
+
+  .k-panelbar .k-panelbar-group .k-panelbar-item.k-level-1 .k-link {
+    background-color: #3f3f3f;
+    background-image: none;
+  }
+
+  .k-dialog-wrapper .k-window.k-dialog .k-window-titlebar.k-dialog-titlebar {
+    background-color: initial;
+    background-image: linear-gradient(#6e6e6e, #363636);
+  }
+
+  .k-dialog-wrapper
+    .k-window.k-dialog
+    .k-window-actions.k-dialog-actions.k-actions.k-actions-start {
+    background-color: initial;
+    background-image: linear-gradient(#3f3f3f, #1e1e1e);
+  }
+
+  .k-dialog-wrapper
+    .k-window.k-dialog
+    .k-window-actions.k-dialog-actions.k-actions.k-actions-center {
+    background-color: initial;
+    background-image: linear-gradient(#3f3f3f, #1e1e1e);
+  }
+
+  .k-dialog-wrapper .k-window.k-dialog .k-window-actions.k-dialog-actions.k-actions.k-actions-end {
+    background-color: initial;
+    background-image: linear-gradient(#3f3f3f, #1e1e1e);
+  }
+
+  .k-window .k-window-titlebar {
+    background-color: initial;
+    background-image: linear-gradient(#6e6e6e, #363636);
+  }
+
+  .k-window .k-window-content {
+    background-color: initial;
+    background-image: linear-gradient(#474747, #343434);
+  }
+
+  .k-toolbar.k-toolbar-solid {
+    background-color: initial;
+  }
+
+  .k-toolbar {
+    background-image: linear-gradient(#474747, #343434);
+  }
+
+  .k-tabstrip.k-tabstrip-top .k-tabstrip-content.k-active,
+  .k-tabstrip.k-tabstrip-top .k-tabstrip-content.k-state-active,
+  .k-tabstrip.k-tabstrip-top .k-tabstrip-content:active {
+    background-color: #2a2a2a;
+    background-image: none;
+  }
+
+  .k-tabstrip .k-tabstrip-items-wrapper.k-hstack .k-tabstrip-items.k-reset.k-tabstrip-items-start {
+    background-color: initial;
+    background-image: linear-gradient(#5b5b5b, #414141);
+  }
+
+  .k-tabstrip.k-tabstrip-left
+    .k-tabstrip-items-wrapper
+    .k-tabstrip-items.k-reset.k-tabstrip-items-start {
+    background-color: initial;
+    background-image: linear-gradient(#5b5b5b, #414141);
+  }
+
+  .k-tabstrip.k-tabstrip-right
+    .k-tabstrip-items-wrapper
+    .k-tabstrip-items.k-reset.k-tabstrip-items-start {
+    background-color: initial;
+    background-image: linear-gradient(#5b5b5b, #414141);
+  }
+}
+
+.k-drawer-wrapper {
+  scrollbar-color: var(--accent-primary-color) !important;
+}

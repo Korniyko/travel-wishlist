@@ -1,0 +1,23 @@
+:host {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.message {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  opacity: 0.8;
+  // color: var(--selected-text);
+}
+
+.spinner {
+  // color: var(--selected-text);
+}

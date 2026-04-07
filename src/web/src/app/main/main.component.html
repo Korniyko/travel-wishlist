@@ -1,0 +1,10 @@
+@if (initializedMain()) {
+  <!-- Header -->
+  <app-header [theme]="theme()" (toggleNavigationPanel)="onToggleNavigationPanel()" />
+  <!-- Navigation with View -->
+  <core-navigation [items]="navigationItems()" [(expanded)]="navigationIsExpanded" />
+  <!-- Footer -->
+  <footer>&copy; {{ year() }} Version 0.0.1</footer>
+} @else {
+  <core-spinner></core-spinner>
+}

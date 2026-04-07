@@ -1,0 +1,53 @@
+@use 'tokens' as *;
+@use '@progress/kendo-theme-default/scss/index.scss' as * with (
+  $kendo-colors: (
+    on-app-surface: $tb-on-app-surface,
+    surface-alt: $tb-surface-alt,
+    border: $tb-border,
+    primary: $tb-primary,
+    surface: $tb-surface,
+    primary-hover: $tb-primary-hover,
+    base: $tb-base,
+    on-base: $tb-on-base,
+    base-hover: $tb-base-hover,
+    base-active: $tb-base-active,
+    subtle: $tb-subtle,
+    base-subtle: $tb-base-subtle,
+    base-subtle-hover: $tb-base-subtle-hover,
+    base-on-surface: $tb-base-on-surface,
+    primary-subtle: $tb-primary-subtle,
+    border-alt: $tb-border-alt,
+    primary-active: $tb-primary-active,
+    app-surface: $tb-app-surface,
+    base-emphasis: $tb-base-emphasis,
+    base-subtle-active: $tb-base-subtle-active,
+    base-on-subtle: $tb-base-on-subtle,
+    primary-subtle-hover: $tb-primary-subtle-hover,
+    primary-subtle-active: $tb-primary-subtle-active,
+    primary-emphasis: $tb-primary-emphasis,
+    primary-on-subtle: $tb-primary-on-subtle,
+    primary-on-surface: $tb-primary-on-surface,
+    secondary: $tb-secondary,
+    secondary-hover: $tb-secondary-hover,
+    secondary-active: $tb-secondary-active,
+    secondary-emphasis: $tb-secondary-emphasis,
+    secondary-on-subtle: $tb-secondary-on-subtle,
+  ),
+  $kendo-font-family: $tb-kendo-font-family,
+  $kendo-font-size: $tb-kendo-font-size,
+  $kendo-font-weight-normal: $tb-kendo-font-weight-normal,
+  $kendo-line-height: $tb-kendo-line-height
+);
+@use '@progress/kendo-theme-utils/scss/all.scss' as *;
+@use 'overrides' as *;
+
+@include kendo-theme--styles();
+
+@include tb-overrides();
+
+:root {
+  // Kendo Overrides (Dark Theme)
+  --kendo-color-primary-on-surface: #3793fe;
+  --kendo-color-secondary-on-surface: #3dba89;
+  --kendo-color-error-on-surface: #ff3d28;
+}

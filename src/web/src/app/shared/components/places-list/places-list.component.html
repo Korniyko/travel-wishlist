@@ -1,0 +1,42 @@
+@for (dataItem of places(); track dataItem.name + dataItem.city) {
+  <fieldset>
+    <legend>{{ dataItem.category }}</legend>
+    <div class="item-container">
+      <div class="details-container">
+        <!-- Icon -->
+        <span><img [src]="dataItem.imgUrl" alt="{{ dataItem.name }}" class="place-image" /></span>
+        <!-- Name -->
+        <div class="row">
+          <span class="label">Name:</span>
+          <span>{{ dataItem.name }}</span>
+        </div>
+        <!-- City -->
+        <div class="row">
+          <span class="label">City:</span>
+          <span>{{ dataItem.city }}</span>
+        </div>
+        <!-- Address -->
+        <div class="row">
+          <span class="label">Address:</span>
+          <span>{{ dataItem.address }}</span>
+        </div>
+        <!-- Instagram -->
+        <div class="row">
+          <span class="label">Instagram:</span>
+          @if (dataItem.instagramUrl) {
+            <a [href]="dataItem.instagramUrl" target="_blank" rel="noopener noreferrer">
+              @{{ dataItem.instagramUrl.split('/').pop() }}
+            </a>
+          } @else {
+            <span>N/A</span>
+          }
+        </div>
+      </div>
+      <core-button
+        [color]="'primary'"
+        [icon]="mode() === 'places' ? starOutlineIcon : starIcon"
+        (click)="onSave(dataItem)"
+      />
+    </div>
+  </fieldset>
+}

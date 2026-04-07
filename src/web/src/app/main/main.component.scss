@@ -1,0 +1,26 @@
+:host {
+  display: flex;
+  flex-flow: column nowrap;
+  height: 100%;
+  width: 100%;
+}
+
+app-header {
+  box-shadow: var(--kendo-elevation-3);
+  z-index: 1;
+}
+
+core-navigation {
+  flex: 1 1 0;
+  z-index: 0;
+  position: relative;
+}
+
+footer {
+  display: flex;
+  padding: 0.15rem;
+  font-size: 0.8rem;
+  background: var(--header-bg);
+  box-shadow: var(--kendo-elevation-3);
+  z-index: 1;
+}

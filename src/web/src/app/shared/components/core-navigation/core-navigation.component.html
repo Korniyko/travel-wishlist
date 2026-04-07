@@ -1,0 +1,93 @@
+<div class="wrapper">
+  <!-- Navigation -->
+  <ul
+    class="navigation"
+    [ngStyle]="{ width: width() }"
+    [ngClass]="expanded() ? '' : miniMode() ? 'mini' : 'collapsed'"
+    [class.absolute-position]="expanded() && _showOverlay()"
+  >
+    @for (item of items(); track item.id) {
+      <!-- Item -->
+      <li [ngStyle]="{ 'margin-top': item.alignBottom ? 'auto' : '0' }">
+        <button
+          class="navigation-item first-level-item"
+          [class.selected]="_selectedItemId === item.id"
+          [class.folder]="'children' in item"
+          [class.selected-folder]="'children' in item ? _hasChildSelected(item) : false"
+          (click)="_onSelect(item)"
+        >
+          @if (item.icon) {
+            <kendo-svgicon
+              class="icon"
+              kendoTooltip
+              [position]="'right'"
+              [showAfter]="500"
+              [icon]="$asSVGIcon(item.icon)"
+              [attr.title]="item.label"
+            ></kendo-svgicon>
+          }
+          <span class="label" [class.hidden-label]="!expanded()">{{ item.label }}</span>
+          @if ('children' in item) {
+            <kendo-svgicon
+              class="icon expand-icon"
+              [class.hidden-icon]="!expanded()"
+              [icon]="_itemIsExpanded(item.id) ? _chevronUpIcon : _chevronDownIcon"
+            ></kendo-svgicon>
+          }
+        </button>
+      </li>
+      <!-- Item Children -->
+      @if ('children' in item) {
+        <div
+          class="item-children"
+          [ngClass]="_itemIsExpanded(item.id) ? '' : 'item-children-collapsed'"
+          [ngStyle]="{
+            'min-height': 'calc(48px * ' + item.children.length + ')',
+            height: 'calc(48px * ' + item.children.length + ')',
+          }"
+        >
+          @for (child of item.children; track child.id) {
+            <li class="item-child" [ngClass]="expanded() ? 'item-child-expanded' : ''">
+              <button
+                class="navigation-item"
+                [class.selected]="_selectedItemId === child.id"
+                (click)="_onSelect(child)"
+              >
+                @if (child.icon) {
+                  <kendo-svgicon
+                    class="icon"
+                    kendoTooltip
+                    [position]="'right'"
+                    [showAfter]="500"
+                    [icon]="$asSVGIcon(child.icon)"
+                    [attr.title]="child.label"
+                  ></kendo-svgicon>
+                }
+                <span class="label" [class.hidden-label]="!expanded()">{{ child.label }}</span>
+              </button>
+            </li>
+          }
+        </div>
+      }
+    }
+  </ul>
+  <!-- View -->
+  <div class="relative-position view stretch">
+    <!-- View Label -->
+    @if (showViewLabels()) {
+      <div class="view-label-panel">{{ _viewLabel() }}</div>
+    }
+    <!-- Content -->
+    <div class="relative-position stretch">
+      <router-outlet></router-outlet>
+    </div>
+    <!-- Overlay -->
+    <button
+      class="overlay"
+      [ngClass]="_showOverlay() ? 'overlay-visible' : 'overlay-hidden'"
+      (click)="onOverlayClick()"
+    >
+      Overlay Text
+    </button>
+  </div>
+</div>

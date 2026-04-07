@@ -1,0 +1,16 @@
+:host {
+  display: block;
+}
+
+.title {
+  margin: 0 0.25rem;
+  font-size: 1.25rem;
+}
+
+.message {
+  font-size: 1.1rem;
+  margin: 0.25rem;
+  max-width: 600px;
+  min-width: 200px;
+  white-space: pre-wrap;
+}
